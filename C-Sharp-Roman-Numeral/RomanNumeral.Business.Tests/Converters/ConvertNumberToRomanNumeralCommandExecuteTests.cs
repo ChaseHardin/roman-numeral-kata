@@ -12,5 +12,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(0).Execute();
             Assert.AreEqual("", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertOne()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(1).Execute();
+            Assert.AreEqual("I", actual);
+        }
     }
 }
