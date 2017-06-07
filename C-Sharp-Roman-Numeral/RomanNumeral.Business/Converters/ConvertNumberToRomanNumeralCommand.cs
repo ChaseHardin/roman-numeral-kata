@@ -10,7 +10,7 @@
 
         public string Execute()
         {
-            return "";
+            return _number > 0 ? "I" : "";
         }
     }
 }
