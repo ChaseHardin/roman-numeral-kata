@@ -10,7 +10,7 @@
 
         public string Execute()
         {
-            throw new System.NotImplementedException();
+            return "";
         }
     }
 }
