@@ -30,10 +30,16 @@ fdescribe('RomanNumeralConverterComponent', () => {
       expect(actual).toEqual('');
     });
 
-    it('should return blan string when less than zero', () => {
+    it('should return blank string when less than zero', () => {
       fixture.componentInstance.decimalNumber = -10;
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('');
+    });
+
+    it('should convert 1', () => {
+      fixture.componentInstance.decimalNumber = 1;
+      var actual = fixture.componentInstance.convert();
+      expect(actual).toEqual('I');
     });
   });
 });
