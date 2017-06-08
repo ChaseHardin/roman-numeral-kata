@@ -26,5 +26,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(4).Execute();
             Assert.AreEqual("IV", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertFive()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(5).Execute();
+            Assert.AreEqual("V", actual);
+        }
     }
 }
