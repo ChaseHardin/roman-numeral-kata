@@ -75,5 +75,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(100).Execute();
             Assert.AreEqual("L", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertFourHundred()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(400).Execute();
+            Assert.AreEqual("LD", actual);
+        }
     }
 }
