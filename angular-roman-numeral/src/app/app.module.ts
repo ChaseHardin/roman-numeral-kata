@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {RomanNumeralConverterComponent} from "./features/roman-numeral-converter/roman-numeral-converter.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RomanNumeralConverterComponent
   ],
   imports: [
     BrowserModule,
