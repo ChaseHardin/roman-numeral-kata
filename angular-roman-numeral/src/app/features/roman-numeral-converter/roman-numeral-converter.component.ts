@@ -29,4 +29,5 @@ var decimalToRomanNumeralMapper = [
   { key: 50, value: 'L'},
   { key: 90, value: 'XC'},
   { key: 100, value: 'C'},
+  { key: 400, value: 'LDgi'},
 ];
