@@ -5,7 +5,8 @@ namespace RomanNumeral.Business.Converters
 {
     public class ConvertNumberToRomanNumeralCommand
     {
-        private readonly int _number;
+        private static int _number;
+        private string _romanNumeral = string.Empty;
 
         public ConvertNumberToRomanNumeralCommand(int number)
         {
@@ -14,12 +15,33 @@ namespace RomanNumeral.Business.Converters
 
         public string Execute()
         {
-            return _number <= 0 ? "" : DecimalToRomanNumeralMapper.Mapper[FindMaxKeyInDictionary(_number)];
+            if (_number <= 0) return "";
+
+            UpdateRomanNumeral();
+            UpdateNumber();
+            DoExecute();
+
+            return _romanNumeral;
         }
 
-        private static int FindMaxKeyInDictionary(int number)
+        private void UpdateRomanNumeral()
         {
-            return DecimalToRomanNumeralMapper.Mapper.Keys.Where(key => key <= number).Max();
+            _romanNumeral += DecimalToRomanNumeralMapper.Mapper[FindMaxKeyInDictionary()];
+        }
+
+        private static void UpdateNumber()
+        {
+            _number -= FindMaxKeyInDictionary();
+        }
+
+        private void DoExecute()
+        {
+            if (_number > 0) Execute();
+        }
+
+        private static int FindMaxKeyInDictionary()
+        {
+            return DecimalToRomanNumeralMapper.Mapper.Keys.Where(key => key <= _number).Max();
         }
     }
 }

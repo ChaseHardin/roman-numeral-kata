@@ -18,7 +18,7 @@ namespace RomanNumeral.Business.Mappers
             { 400, "LD" },
             { 500, "D" },
             { 900, "CM" },
-            { 1000, "M" },
+            { 1000, "M" }
         };
     }
 }

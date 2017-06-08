@@ -9,113 +9,97 @@ namespace RomanNumeral.Business.Tests.Converters
         [TestMethod]
         public void ShouldReturnEmptyStringWhenNumberIsNegative()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(-42).Execute();
-            Assert.AreEqual("", actual);
+            Assert.AreEqual("", new ConvertNumberToRomanNumeralCommand(-42).Execute());
         }
 
         [TestMethod]
         public void ShouldReturnBlankWhenZero()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(0).Execute();
-            Assert.AreEqual("", actual);
+            Assert.AreEqual("", new ConvertNumberToRomanNumeralCommand(0).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertOne()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(1).Execute();
-            Assert.AreEqual("I", actual);
+            Assert.AreEqual("I", new ConvertNumberToRomanNumeralCommand(1).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFour()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(4).Execute();
-            Assert.AreEqual("IV", actual);
+            Assert.AreEqual("IV", new ConvertNumberToRomanNumeralCommand(4).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFive()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(5).Execute();
-            Assert.AreEqual("V", actual);
+            Assert.AreEqual("V", new ConvertNumberToRomanNumeralCommand(5).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertNine()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(9).Execute();
-            Assert.AreEqual("IX", actual);
+            Assert.AreEqual("IX", new ConvertNumberToRomanNumeralCommand(9).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertTen()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(10).Execute();
-            Assert.AreEqual("X", actual);
+            Assert.AreEqual("X", new ConvertNumberToRomanNumeralCommand(10).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFourty()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(40).Execute();
-            Assert.AreEqual("XL", actual);
+            Assert.AreEqual("XL", new ConvertNumberToRomanNumeralCommand(40).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFifty()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(50).Execute();
-            Assert.AreEqual("L", actual);
+            Assert.AreEqual("L", new ConvertNumberToRomanNumeralCommand(50).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertNinty()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(90).Execute();
-            Assert.AreEqual("XC", actual);
+            Assert.AreEqual("XC", new ConvertNumberToRomanNumeralCommand(90).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertOneHundred()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(100).Execute();
-            Assert.AreEqual("L", actual);
+            Assert.AreEqual("L", new ConvertNumberToRomanNumeralCommand(100).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFourHundred()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(400).Execute();
-            Assert.AreEqual("LD", actual);
+            Assert.AreEqual("LD", new ConvertNumberToRomanNumeralCommand(400).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFiveHundred()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(500).Execute();
-            Assert.AreEqual("D", actual);
+            Assert.AreEqual("D", new ConvertNumberToRomanNumeralCommand(500).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertNineHundred()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(900).Execute();
-            Assert.AreEqual("CM", actual);
+            Assert.AreEqual("CM", new ConvertNumberToRomanNumeralCommand(900).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertOneThousand()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(1000).Execute();
-            Assert.AreEqual("M", actual);
+            Assert.AreEqual("M", new ConvertNumberToRomanNumeralCommand(1000).Execute());
         }
 
         [TestMethod]
         public void ShouldConverFiftyFive()
         {
-            var actual = new ConvertNumberToRomanNumeralCommand(55).Execute();
-            Assert.AreEqual("LV", actual);
+            Assert.AreEqual("LV", new ConvertNumberToRomanNumeralCommand(55).Execute());
         }
     }
 }
