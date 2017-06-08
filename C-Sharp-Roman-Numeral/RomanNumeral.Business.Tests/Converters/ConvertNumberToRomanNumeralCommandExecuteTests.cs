@@ -61,5 +61,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(50).Execute();
             Assert.AreEqual("L", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertNinty()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(90).Execute();
+            Assert.AreEqual("XC", actual);
+        }
     }
 }
