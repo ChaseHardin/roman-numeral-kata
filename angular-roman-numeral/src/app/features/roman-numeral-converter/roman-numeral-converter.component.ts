@@ -22,5 +22,6 @@ export class RomanNumeralConverterComponent {
 var decimalToRomanNumeralMapper = [
   { key: 1, value: 'I'},
   { key: 4, value: 'IV'},
-  { key: 5, value: 'V'}
+  { key: 5, value: 'V'},
+  { key: 9, value: 'IX'},
 ];
