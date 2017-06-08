@@ -54,5 +54,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(40).Execute();
             Assert.AreEqual("XL", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertFifty()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(50).Execute();
+            Assert.AreEqual("L", actual);
+        }
     }
 }
