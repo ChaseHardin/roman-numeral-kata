@@ -118,6 +118,6 @@ fdescribe('RomanNumeralConverterComponent', () => {
       fixture.componentInstance.number = 55;
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('LV');
-    });g
+    });
   });
 });
