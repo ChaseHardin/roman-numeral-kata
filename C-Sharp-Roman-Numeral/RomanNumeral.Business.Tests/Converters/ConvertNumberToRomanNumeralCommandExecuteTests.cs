@@ -89,5 +89,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(500).Execute();
             Assert.AreEqual("D", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertNineHundred()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(900).Execute();
+            Assert.AreEqual("CM", actual);
+        }
     }
 }
