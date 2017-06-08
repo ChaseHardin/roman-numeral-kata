@@ -69,7 +69,7 @@ namespace RomanNumeral.Business.Tests.Converters
         [TestMethod]
         public void ShouldConvertOneHundred()
         {
-            Assert.AreEqual("L", new ConvertNumberToRomanNumeralCommand(100).Execute());
+            Assert.AreEqual("C", new ConvertNumberToRomanNumeralCommand(100).Execute());
         }
 
         [TestMethod]
