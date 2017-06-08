@@ -40,5 +40,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(9).Execute();
             Assert.AreEqual("IX", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertTen()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(10).Execute();
+            Assert.AreEqual("X", actual);
+        }
     }
 }
