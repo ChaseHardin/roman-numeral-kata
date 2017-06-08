@@ -101,5 +101,11 @@ fdescribe('RomanNumeralConverterComponent', () => {
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('D');
     });
+
+    it('should convert nine hundred', () => {
+      fixture.componentInstance.number = 900;
+      var actual = fixture.componentInstance.convert();
+      expect(actual).toEqual('CM');
+    });
   });
 });
