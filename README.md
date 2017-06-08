@@ -1,4 +1,14 @@
-# AngularRomanNumeral
+# Roman Numeral Kata - C#
+
+This project was developed on June 7th, 2017.
+
+## Running unit tests
+
+Open `ConvertNumberToRomanNumeralCommandExecuteTests.cs`, which is located in `C-Sharp-Roman-Numeral/RomanNumeral.Business.Tests/Converters/`.
+
+All tests can be run here.
+
+# Roman Numeral Kata - Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
