@@ -33,5 +33,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(5).Execute();
             Assert.AreEqual("V", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertNine()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(9).Execute();
+            Assert.AreEqual("IX", actual);
+        }
     }
 }
