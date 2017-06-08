@@ -15,7 +15,8 @@ namespace RomanNumeral.Business.Mappers
             { 50, "L"},
             { 90, "XC"},
             { 100, "L"},
-            { 400, "LD" } 
+            { 400, "LD" },
+            { 500, "D" } 
         };
     }
 }
