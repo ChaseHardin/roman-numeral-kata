@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RomanNumeralConverterComponent} from "./features/roman-numeral-converter/roman-numeral-converter.component";
+import {AlertModule} from "ng2-bootstrap";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {RomanNumeralConverterComponent} from "./features/roman-numeral-converter
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

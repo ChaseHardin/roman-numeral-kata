@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-roman-numeral-converter',
+  selector: 'roman-numeral-converter',
   templateUrl: './roman-numeral-converter.component.html',
   styleUrls: ['./roman-numeral-converter.component.css']
 })
 
 export class RomanNumeralConverterComponent {
-  private number: number;
+  number: number;
   romanNumeral: string = '';
+
+  public execute() {
+    if(this.romanNumeral) {
+      this.romanNumeral = '';
+    }
+
+    this.convert();
+  }
 
   public convert(){
     if(this.number <= 0) return '';

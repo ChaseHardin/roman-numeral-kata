@@ -1,14 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RomanNumeralConverterComponent } from './roman-numeral-converter.component';
+import {FormsModule} from "@angular/forms";
 
-fdescribe('RomanNumeralConverterComponent', () => {
+describe('RomanNumeralConverterComponent', () => {
   let component: RomanNumeralConverterComponent;
   let fixture: ComponentFixture<RomanNumeralConverterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RomanNumeralConverterComponent ]
+      declarations: [ RomanNumeralConverterComponent ],
+      imports: [FormsModule]
     })
     .compileComponents();
   }));
@@ -118,6 +120,28 @@ fdescribe('RomanNumeralConverterComponent', () => {
       fixture.componentInstance.number = 55;
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('LV');
+    });
+  });
+
+  describe('test html bindings', () => {
+    it('should bind result on button click', () => {
+      fixture.componentInstance.number = 5;
+      fixture.nativeElement.querySelector('.btn-success').click();
+      fixture.detectChanges();
+
+      expect(fixture.nativeElement.querySelector('[name=result]').textContent.trim()).toEqual('V');
+    });
+
+    it('should reset roman numeral variable on button click', () => {
+      fixture.componentInstance.number = 4;
+      fixture.nativeElement.querySelector('.btn-success').click();
+      fixture.detectChanges();
+      expect(fixture.nativeElement.querySelector('[name=result]').textContent.trim()).toEqual('IV');
+
+      fixture.componentInstance.number = 1;
+      fixture.nativeElement.querySelector('.btn-success').click();
+      fixture.detectChanges();
+      expect(fixture.nativeElement.querySelector('[name=result]').textContent.trim()).toEqual('I');
     });
   });
 });
