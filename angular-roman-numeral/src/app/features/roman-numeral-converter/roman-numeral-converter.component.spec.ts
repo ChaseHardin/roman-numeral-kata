@@ -53,5 +53,11 @@ fdescribe('RomanNumeralConverterComponent', () => {
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('V');
     });
+
+    it('should convert nine', () => {
+      fixture.componentInstance.number = 9;
+      var actual = fixture.componentInstance.convert();
+      expect(actual).toEqual('IX');
+    });
   });
 });
