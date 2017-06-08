@@ -19,5 +19,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(1).Execute();
             Assert.AreEqual("I", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertFour()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(4).Execute();
+            Assert.AreEqual("IV", actual);
+        }
     }
 }
