@@ -11,6 +11,6 @@ export class RomanNumeralConverterComponent {
   constructor() { }
 
   public convert(){
-    return '';
+    return this.decimalNumber <= 0 ? '' : 'I';
   }
 }
