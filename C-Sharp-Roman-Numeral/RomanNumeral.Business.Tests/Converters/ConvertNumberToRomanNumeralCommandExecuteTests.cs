@@ -82,5 +82,12 @@ namespace RomanNumeral.Business.Tests.Converters
             var actual = new ConvertNumberToRomanNumeralCommand(400).Execute();
             Assert.AreEqual("LD", actual);
         }
+
+        [TestMethod]
+        public void ShouldConvertFiveHundred()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(500).Execute();
+            Assert.AreEqual("D", actual);
+        }
     }
 }
