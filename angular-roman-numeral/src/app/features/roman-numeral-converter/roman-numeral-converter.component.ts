@@ -7,19 +7,25 @@ import { Component } from '@angular/core';
 })
 
 export class RomanNumeralConverterComponent {
-  number: number;
+  private number: number;
   romanNumeral: string = '';
-
-  constructor() { }
 
   public convert(){
     if(this.number <= 0) return '';
 
-    this.romanNumeral += this.findMaxValueFromMapper();
-    this.number -= this.findMaxKeyFromMapper();
+    this.updateRomanNumeral();
+    this.updateNumber();
     this.convert();
 
     return this.romanNumeral;
+  }
+
+  private updateRomanNumeral() {
+    this.romanNumeral += this.findMaxValueFromMapper();
+  }
+
+  private updateNumber() {
+    this.number -= this.findMaxKeyFromMapper();
   }
 
   private findMaxKeyFromMapper(): number {
