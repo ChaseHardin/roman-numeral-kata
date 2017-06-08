@@ -29,5 +29,11 @@ fdescribe('RomanNumeralConverterComponent', () => {
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('');
     });
+
+    it('should return blan string when less than zero', () => {
+      fixture.componentInstance.decimalNumber = -10;
+      var actual = fixture.componentInstance.convert();
+      expect(actual).toEqual('');
+    });
   });
 });
