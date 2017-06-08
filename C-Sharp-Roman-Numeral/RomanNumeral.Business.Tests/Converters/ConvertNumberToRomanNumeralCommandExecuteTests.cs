@@ -7,6 +7,13 @@ namespace RomanNumeral.Business.Tests.Converters
     public class ConvertNumberToRomanNumeralCommandExecuteTests
     {
         [TestMethod]
+        public void ShouldReturnEmptyStringWhenNumberIsNegative()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(-42).Execute();
+            Assert.AreEqual("", actual);
+        }
+
+        [TestMethod]
         public void ShouldReturnBlankWhenZero()
         {
             var actual = new ConvertNumberToRomanNumeralCommand(0).Execute();
@@ -102,6 +109,13 @@ namespace RomanNumeral.Business.Tests.Converters
         {
             var actual = new ConvertNumberToRomanNumeralCommand(1000).Execute();
             Assert.AreEqual("M", actual);
+        }
+
+        [TestMethod]
+        public void ShouldConverFiftyFive()
+        {
+            var actual = new ConvertNumberToRomanNumeralCommand(55).Execute();
+            Assert.AreEqual("LV", actual);
         }
     }
 }
