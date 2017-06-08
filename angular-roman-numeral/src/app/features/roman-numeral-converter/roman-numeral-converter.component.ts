@@ -30,4 +30,5 @@ var decimalToRomanNumeralMapper = [
   { key: 90, value: 'XC'},
   { key: 100, value: 'C'},
   { key: 400, value: 'LD'},
+  { key: 500, value: 'D'},
 ];
