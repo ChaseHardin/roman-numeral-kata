@@ -25,28 +25,27 @@ fdescribe('RomanNumeralConverterComponent', () => {
 
   describe('convert tests', () => {
     it('should return blank string when zero', () => {
-      fixture.componentInstance.decimalNumber = 0;
+      fixture.componentInstance.number = 0;
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('');
     });
 
     it('should return blank string when less than zero', () => {
-      fixture.componentInstance.decimalNumber = -10;
+      fixture.componentInstance.number = -10;
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('');
     });
 
     it('should convert one', () => {
-      fixture.componentInstance.decimalNumber = 1;
+      fixture.componentInstance.number = 1;
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('I');
     });
 
     it('should convert four', () => {
-      fixture.componentInstance.decimalNumber = 4;
+      fixture.componentInstance.number = 4;
       var actual = fixture.componentInstance.convert();
       expect(actual).toEqual('IV');
     });
   });
 });
-g

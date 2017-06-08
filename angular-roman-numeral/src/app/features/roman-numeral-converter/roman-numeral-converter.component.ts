@@ -6,11 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./roman-numeral-converter.component.css']
 })
 export class RomanNumeralConverterComponent {
-  decimalNumber: number;
+  number: number;
 
   constructor() { }
 
   public convert(){
-    return this.decimalNumber <= 0 ? '' : 'I';
+    return this.number <= 0 ? '' : this.findMaxValueFromMapper();
+  }
+
+  private findMaxValueFromMapper(): string {
+    return decimalToRomanNumeralMapper.filter(x => x.key <= this.number).map(mapper => mapper.value).slice(-1).pop();
   }
 }
+
+var decimalToRomanNumeralMapper = [
+  { key: 1, value: 'I'},
+  { key: 4, value: 'IV'}
+];
