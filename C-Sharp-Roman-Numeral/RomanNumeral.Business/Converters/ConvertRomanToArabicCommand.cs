@@ -11,7 +11,7 @@
 
         public int Execute()
         {
-            return 1;
+            return _romanNumeral == "I" ? 1 : 2;
         }
     }
 }
