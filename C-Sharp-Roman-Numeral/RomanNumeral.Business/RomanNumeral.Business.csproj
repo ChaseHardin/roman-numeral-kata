@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\ConvertNumberToRomanNumeralCommand.cs" />
+    <Compile Include="Converters\ConvertRomanToArabicCommand.cs" />
     <Compile Include="Mappers\DecimalToRomanNumeralMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
