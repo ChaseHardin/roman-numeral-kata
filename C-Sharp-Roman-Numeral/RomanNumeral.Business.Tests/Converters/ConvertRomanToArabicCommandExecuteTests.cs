@@ -95,5 +95,11 @@ namespace RomanNumeral.Business.Tests.Converters
         {
             Assert.AreEqual(1000, new ConvertRomanToArabicCommand("M").Execute());
         }
+
+        [TestMethod]
+        public void ShouldConvertOneThousandTwoHundredAndThirtyFour()
+        {
+            Assert.AreEqual(1234, new ConvertRomanToArabicCommand("MCCXXXIV").Execute());
+        }
     }
 }
