@@ -45,7 +45,8 @@ namespace RomanNumeral.Business.Converters
             { "XC" , 90 },
             { "C", 100 },
             { "CD", 400 },
-            { "D", 500}
+            { "D", 500 },
+            { "CM", 900 }
         };
     }
 }
