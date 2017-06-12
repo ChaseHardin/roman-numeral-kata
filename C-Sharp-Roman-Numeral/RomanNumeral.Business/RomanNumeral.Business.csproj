@@ -42,6 +42,7 @@
     <Compile Include="Converters\ConvertNumberToRomanNumeralCommand.cs" />
     <Compile Include="Converters\ConvertRomanToArabicCommand.cs" />
     <Compile Include="Mappers\DecimalToRomanNumeralMapper.cs" />
+    <Compile Include="Mappers\RomanToArabicMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

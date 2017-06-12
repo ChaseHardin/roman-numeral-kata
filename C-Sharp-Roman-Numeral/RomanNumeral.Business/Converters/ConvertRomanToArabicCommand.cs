@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RomanNumeral.Business.Converters
+﻿namespace RomanNumeral.Business.Converters
 {
     public class ConvertRomanToArabicCommand
     {
@@ -14,8 +12,8 @@ namespace RomanNumeral.Business.Converters
 
         public int Execute()
         {
-            if (_romanNumeral.Length > 1 && RomanToArabicMapper.Mapper.ContainsKey(_romanNumeral.Substring(0, 2)))
-                return RomanToArabicMapper.Mapper[_romanNumeral.Substring(0, 2)];
+            if (_romanNumeral.Length > 1 && Mappers.RomanToArabicMapper.Mapper.ContainsKey(_romanNumeral.Substring(0, 2)))
+                return Mappers.RomanToArabicMapper.Mapper[_romanNumeral.Substring(0, 2)];
 
             UpdateNumeric();
 
@@ -26,28 +24,8 @@ namespace RomanNumeral.Business.Converters
         {
             foreach (var character in _romanNumeral)
             {
-                _number += RomanToArabicMapper.Mapper[character.ToString()];
+                _number += Mappers.RomanToArabicMapper.Mapper[character.ToString()];
             }
         }
-    }
-
-    public static class RomanToArabicMapper
-    {
-        public static Dictionary<string, int> Mapper = new Dictionary<string, int>
-        {
-            { "I", 1 },
-            { "IV", 4 },
-            { "V", 5 },
-            { "IX", 9 },
-            { "X", 10 },
-            { "XL", 40 },
-            { "L", 50 },
-            { "XC" , 90 },
-            { "C", 100 },
-            { "CD", 400 },
-            { "D", 500 },
-            { "CM", 900 },
-            { "M", 1000 }
-        };
     }
 }
