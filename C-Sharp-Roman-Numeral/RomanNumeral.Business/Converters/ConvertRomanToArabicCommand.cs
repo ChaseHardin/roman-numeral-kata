@@ -36,7 +36,7 @@ namespace RomanNumeral.Business.Converters
         public static Dictionary<string, int> Mapper = new Dictionary<string, int>
         {
             { "I", 1 },
-            { "IV", 4 }
+            { "IV", 4 },
         };
     }
 }
