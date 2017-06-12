@@ -77,5 +77,11 @@ namespace RomanNumeral.Business.Tests.Converters
         {
             Assert.AreEqual(400, new ConvertRomanToArabicCommand("CD").Execute());
         }
+
+        [TestMethod]
+        public void ShouldConvertFiveHundred()
+        {
+            Assert.AreEqual(500, new ConvertRomanToArabicCommand("D").Execute());
+        }
     }
 }
