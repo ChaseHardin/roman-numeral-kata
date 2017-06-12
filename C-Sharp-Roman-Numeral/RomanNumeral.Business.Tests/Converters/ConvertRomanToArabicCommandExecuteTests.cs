@@ -65,5 +65,11 @@ namespace RomanNumeral.Business.Tests.Converters
         {
             Assert.AreEqual(90, new ConvertRomanToArabicCommand("XC").Execute());
         }
+
+        [TestMethod]
+        public void ShouldConvertOneHundred()
+        {
+            Assert.AreEqual(100, new ConvertRomanToArabicCommand("C").Execute());
+        }
     }
 }
