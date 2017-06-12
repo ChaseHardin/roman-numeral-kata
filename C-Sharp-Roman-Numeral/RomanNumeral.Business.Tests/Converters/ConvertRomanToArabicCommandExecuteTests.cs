@@ -53,5 +53,11 @@ namespace RomanNumeral.Business.Tests.Converters
         {
             Assert.AreEqual(40, new ConvertRomanToArabicCommand("XL").Execute());
         }
+
+        [TestMethod]
+        public void ShouldConvertFifty()
+        {
+            Assert.AreEqual(50, new ConvertRomanToArabicCommand("L").Execute());
+        }
     }
 }
