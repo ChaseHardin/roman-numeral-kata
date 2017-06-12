@@ -35,5 +35,11 @@ namespace RomanNumeral.Business.Tests.Converters
         {
             Assert.AreEqual(5, new ConvertRomanToArabicCommand("V").Execute());
         }
+
+        [TestMethod]
+        public void ShouldConvertNine()
+        {
+            Assert.AreEqual(9, new ConvertRomanToArabicCommand("IX").Execute());
+        }
     }
 }
