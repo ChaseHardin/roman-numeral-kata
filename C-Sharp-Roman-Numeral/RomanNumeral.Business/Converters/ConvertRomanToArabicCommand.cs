@@ -14,12 +14,17 @@ namespace RomanNumeral.Business.Converters
 
         public int Execute()
         {
-            foreach (var t in _romanNumeral)
-            {
-                _number += RomanToArabicMapper.Mapper[t.ToString()];
-            }
+            UpdateNumeric();
 
             return _number;
+        }
+
+        private void UpdateNumeric()
+        {
+            foreach (var character in _romanNumeral)
+            {
+                _number += RomanToArabicMapper.Mapper[character.ToString()];
+            }
         }
     }
 
