@@ -14,6 +14,9 @@ namespace RomanNumeral.Business.Converters
 
         public int Execute()
         {
+            if (_romanNumeral.Length > 1 && RomanToArabicMapper.Mapper.ContainsKey(_romanNumeral.Substring(0, 2)))
+                return RomanToArabicMapper.Mapper[_romanNumeral.Substring(0, 2)];
+
             UpdateNumeric();
 
             return _number;
@@ -32,7 +35,8 @@ namespace RomanNumeral.Business.Converters
     {
         public static Dictionary<string, int> Mapper = new Dictionary<string, int>
         {
-            { "I", 1 }
-        }; 
+            { "I", 1 },
+            { "IV", 4 }
+        };
     }
 }

@@ -23,5 +23,11 @@ namespace RomanNumeral.Business.Tests.Converters
         {
             Assert.AreEqual(3, new ConvertRomanToArabicCommand("III").Execute());
         }
+
+        [TestMethod]
+        public void ShouldConvertFour()
+        {
+            Assert.AreEqual(4, new ConvertRomanToArabicCommand("IV").Execute());
+        }
     }
 }
