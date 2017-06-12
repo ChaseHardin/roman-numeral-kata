@@ -3,12 +3,12 @@ using RomanNumeral.Business.Mappers;
 
 namespace RomanNumeral.Business.Converters
 {
-    public class ConvertNumberToRomanNumeralCommand
+    public class ConvertArabicToRomanCommand
     {
         private static int _number;
         private string _romanNumeral = string.Empty;
 
-        public ConvertNumberToRomanNumeralCommand(int number)
+        public ConvertArabicToRomanCommand(int number)
         {
             _number = number;
         }
@@ -26,7 +26,7 @@ namespace RomanNumeral.Business.Converters
 
         private void UpdateRomanNumeral()
         {
-            _romanNumeral += DecimalToRomanNumeralMapper.Mapper[FindMaxKeyInDictionary()];
+            _romanNumeral += ArabicToRomanMapper.Mapper[FindMaxKeyInDictionary()];
         }
 
         private static void UpdateNumber()
@@ -41,7 +41,7 @@ namespace RomanNumeral.Business.Converters
 
         private static int FindMaxKeyInDictionary()
         {
-            return DecimalToRomanNumeralMapper.Mapper.Keys.Where(key => key <= _number).Max();
+            return ArabicToRomanMapper.Mapper.Keys.Where(key => key <= _number).Max();
         }
     }
 }

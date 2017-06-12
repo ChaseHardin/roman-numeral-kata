@@ -50,7 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Converters\ConvertNumberToRomanNumeralCommandExecuteTests.cs" />
+    <Compile Include="Converters\ConvertArabicToRomanCommandExecuteTests.cs" />
     <Compile Include="Converters\ConvertRomanToArabicCommandExecuteTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

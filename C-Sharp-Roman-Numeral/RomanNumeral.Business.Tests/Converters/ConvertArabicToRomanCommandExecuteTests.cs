@@ -4,102 +4,102 @@ using RomanNumeral.Business.Converters;
 namespace RomanNumeral.Business.Tests.Converters
 {
     [TestClass]
-    public class ConvertNumberToRomanNumeralCommandExecuteTests
+    public class ConvertArabicToRomanCommandExecuteTests
     {
         [TestMethod]
         public void ShouldReturnEmptyStringWhenNumberIsNegative()
         {
-            Assert.AreEqual("", new ConvertNumberToRomanNumeralCommand(-42).Execute());
+            Assert.AreEqual("", new ConvertArabicToRomanCommand(-42).Execute());
         }
 
         [TestMethod]
         public void ShouldReturnBlankWhenZero()
         {
-            Assert.AreEqual("", new ConvertNumberToRomanNumeralCommand(0).Execute());
+            Assert.AreEqual("", new ConvertArabicToRomanCommand(0).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertOne()
         {
-            Assert.AreEqual("I", new ConvertNumberToRomanNumeralCommand(1).Execute());
+            Assert.AreEqual("I", new ConvertArabicToRomanCommand(1).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFour()
         {
-            Assert.AreEqual("IV", new ConvertNumberToRomanNumeralCommand(4).Execute());
+            Assert.AreEqual("IV", new ConvertArabicToRomanCommand(4).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFive()
         {
-            Assert.AreEqual("V", new ConvertNumberToRomanNumeralCommand(5).Execute());
+            Assert.AreEqual("V", new ConvertArabicToRomanCommand(5).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertNine()
         {
-            Assert.AreEqual("IX", new ConvertNumberToRomanNumeralCommand(9).Execute());
+            Assert.AreEqual("IX", new ConvertArabicToRomanCommand(9).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertTen()
         {
-            Assert.AreEqual("X", new ConvertNumberToRomanNumeralCommand(10).Execute());
+            Assert.AreEqual("X", new ConvertArabicToRomanCommand(10).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFourty()
         {
-            Assert.AreEqual("XL", new ConvertNumberToRomanNumeralCommand(40).Execute());
+            Assert.AreEqual("XL", new ConvertArabicToRomanCommand(40).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFifty()
         {
-            Assert.AreEqual("L", new ConvertNumberToRomanNumeralCommand(50).Execute());
+            Assert.AreEqual("L", new ConvertArabicToRomanCommand(50).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertNinty()
         {
-            Assert.AreEqual("XC", new ConvertNumberToRomanNumeralCommand(90).Execute());
+            Assert.AreEqual("XC", new ConvertArabicToRomanCommand(90).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertOneHundred()
         {
-            Assert.AreEqual("C", new ConvertNumberToRomanNumeralCommand(100).Execute());
+            Assert.AreEqual("C", new ConvertArabicToRomanCommand(100).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFourHundred()
         {
-            Assert.AreEqual("LD", new ConvertNumberToRomanNumeralCommand(400).Execute());
+            Assert.AreEqual("LD", new ConvertArabicToRomanCommand(400).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertFiveHundred()
         {
-            Assert.AreEqual("D", new ConvertNumberToRomanNumeralCommand(500).Execute());
+            Assert.AreEqual("D", new ConvertArabicToRomanCommand(500).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertNineHundred()
         {
-            Assert.AreEqual("CM", new ConvertNumberToRomanNumeralCommand(900).Execute());
+            Assert.AreEqual("CM", new ConvertArabicToRomanCommand(900).Execute());
         }
 
         [TestMethod]
         public void ShouldConvertOneThousand()
         {
-            Assert.AreEqual("M", new ConvertNumberToRomanNumeralCommand(1000).Execute());
+            Assert.AreEqual("M", new ConvertArabicToRomanCommand(1000).Execute());
         }
 
         [TestMethod]
         public void ShouldConverFiftyFive()
         {
-            Assert.AreEqual("LV", new ConvertNumberToRomanNumeralCommand(55).Execute());
+            Assert.AreEqual("LV", new ConvertArabicToRomanCommand(55).Execute());
         }
     }
 }
