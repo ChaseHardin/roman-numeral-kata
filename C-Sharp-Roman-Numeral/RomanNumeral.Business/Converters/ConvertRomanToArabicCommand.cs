@@ -12,31 +12,56 @@
 
         public int Execute()
         {
-            UpdateNumeric();
+            for (var i = 0; i < _romanNumeral.Length; i++)
+            {
+                if (TwoCharacterKeyMap()) TwoCharacterMapperPlan();
+                else MapperPlan(i);
+            }
 
             return _number;
         }
 
-        private void UpdateNumeric()
+        private void TwoCharacterMapperPlan()
         {
-            for(var i = 0; i < _romanNumeral.Length; i++)
-            {
-                if (_romanNumeral.Length == 2 && Mappers.RomanToArabicMapper.Mapper.ContainsKey(_romanNumeral))
-                {
-                    _number += Mappers.RomanToArabicMapper.Mapper[_romanNumeral];
-                    _romanNumeral = _romanNumeral.Replace(_romanNumeral, string.Empty);
-                }
-                else
-                {
-                    if (_romanNumeral.Length - i >= 2 && Mappers.RomanToArabicMapper.Mapper.ContainsKey(_romanNumeral.Substring(i, 2)))
-                    {
-                        _number += Mappers.RomanToArabicMapper.Mapper[_romanNumeral.Substring(i, 2)];
-                        _romanNumeral = _romanNumeral.Replace(_romanNumeral.Substring(i, 2), string.Empty);
-                    }
-                    else
-                        _number += Mappers.RomanToArabicMapper.Mapper[_romanNumeral[i].ToString()];
-                }
-            }
+            UpdateNumber(_romanNumeral);
+            UpdateAndReplace(_romanNumeral);
+        }
+
+        private void MapperPlan(int index)
+        {
+            if (CharacterMap(index)) MapperMatch(index);
+            else UpdateNumber(_romanNumeral[index].ToString());
+        }
+
+        private void MapperMatch(int index)
+        {
+            UpdateNumber(_romanNumeral.Substring(index, 2));
+            UpdateAndReplace(_romanNumeral.Substring(index, 2));
+        }
+
+        private static bool CharacterMap(int index)
+        {
+            return _romanNumeral.Length - index >= 2 && ContainsKey(_romanNumeral.Substring(index, 2));
+        }
+
+        private static bool TwoCharacterKeyMap()
+        {
+            return _romanNumeral.Length == 2 && ContainsKey(_romanNumeral);
+        }
+
+        private static bool ContainsKey(string roman)
+        {
+            return Mappers.RomanToArabicMapper.Mapper.ContainsKey(roman);
+        }
+
+        private static void UpdateAndReplace(string roman)
+        {
+            _romanNumeral = _romanNumeral.Replace(roman, string.Empty);
+        }
+
+        private void UpdateNumber(string character)
+        {
+            _number += Mappers.RomanToArabicMapper.Mapper[character];
         }
     }
 }
