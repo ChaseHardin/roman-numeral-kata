@@ -41,7 +41,8 @@ namespace RomanNumeral.Business.Converters
             { "IX", 9 },
             { "X", 10 },
             { "XL", 40 },
-            { "L", 50 }
+            { "L", 50 },
+            { "XC" , 90 }
         };
     }
 }
