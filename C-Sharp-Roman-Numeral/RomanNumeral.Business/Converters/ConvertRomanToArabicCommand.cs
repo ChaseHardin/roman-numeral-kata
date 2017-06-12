@@ -37,6 +37,7 @@ namespace RomanNumeral.Business.Converters
         {
             { "I", 1 },
             { "IV", 4 },
+            { "V", 5 }
         };
     }
 }
