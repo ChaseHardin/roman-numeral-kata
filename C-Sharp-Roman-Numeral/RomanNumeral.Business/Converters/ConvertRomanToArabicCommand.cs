@@ -12,9 +12,6 @@
 
         public int Execute()
         {
-            if (_romanNumeral.Length > 1 && Mappers.RomanToArabicMapper.Mapper.ContainsKey(_romanNumeral.Substring(0, 2)))
-                return Mappers.RomanToArabicMapper.Mapper[_romanNumeral.Substring(0, 2)];
-
             UpdateNumeric();
 
             return _number;
@@ -22,9 +19,15 @@
 
         private void UpdateNumeric()
         {
-            foreach (var character in _romanNumeral)
+            for(var i = 0; i < _romanNumeral.Length; i++)
             {
-                _number += Mappers.RomanToArabicMapper.Mapper[character.ToString()];
+                if (_romanNumeral.Length - i > 1 && Mappers.RomanToArabicMapper.Mapper.ContainsKey(_romanNumeral.Substring(i, 2)))
+                {
+                    _number += Mappers.RomanToArabicMapper.Mapper[_romanNumeral.Substring(i, 2)];
+                    _romanNumeral = _romanNumeral.Replace(_romanNumeral.Substring(i, 2), string.Empty);
+                }
+                else
+                    _number += Mappers.RomanToArabicMapper.Mapper[_romanNumeral[i].ToString()];
             }
         }
     }
