@@ -1,4 +1,4 @@
-# Roman Numeral Kata - C#
+# Roman Numeral Kata
 
 This kata was last modified on June 12th, 2017.
 

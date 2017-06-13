@@ -55,9 +55,9 @@
             _romanNumeral = _romanNumeral.Replace(roman, string.Empty);
         }
 
-        private void UpdateNumber(string character)
+        private void UpdateNumber(string roman)
         {
-            _number += Mappers.RomanToArabicMapper.Mapper[character];
+            _number += Mappers.RomanToArabicMapper.Mapper[roman];
         }
     }
 }
