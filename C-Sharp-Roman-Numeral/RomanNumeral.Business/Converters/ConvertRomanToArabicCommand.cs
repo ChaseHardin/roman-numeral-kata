@@ -14,7 +14,11 @@
         {
             for (var i = 0; i < _romanNumeral.Length; i++)
             {
-                if (ContainsKeyByLength(2)) TwoCharUpdate();
+                if (HasTwoCharKey())
+                {
+                    UpdateNumber(_romanNumeral);
+                    Erase(_romanNumeral);
+                }
                 else MultiCharConverter(i);
             }
 
@@ -23,38 +27,30 @@
 
         private void MultiCharConverter(int index)
         {
-            if (ContainsKeyByIndex(index)) Update(index);
+            if (HasKeyByIndex(index))
+            {
+                UpdateNumber(_romanNumeral.Substring(index, 2));
+                Erase(_romanNumeral.Substring(index, 2));
+            }
             else UpdateNumber(_romanNumeral[index].ToString());
         }
 
-        private static bool ContainsKeyByIndex(int index)
+        private static bool HasKeyByIndex(int index)
         {
-            return _romanNumeral.Length - index >= 2 && ContainsKey(_romanNumeral.Substring(index, 2));
+            return _romanNumeral.Length - index >= 2 && HasKey(_romanNumeral.Substring(index, 2));
         }
 
-        private static bool ContainsKeyByLength(int charLength)
+        private static bool HasTwoCharKey()
         {
-            return _romanNumeral.Length == charLength && ContainsKey(_romanNumeral);
+            return _romanNumeral.Length == 2 && HasKey(_romanNumeral);
         }
 
-        private static bool ContainsKey(string roman)
+        private static bool HasKey(string roman)
         {
             return Mappers.RomanToArabicMapper.Mapper.ContainsKey(roman);
         }
 
-        private void Update(int index)
-        {
-            UpdateNumber(_romanNumeral.Substring(index, 2));
-            UpdateAndReplace(_romanNumeral.Substring(index, 2));
-        }
-
-        private void TwoCharUpdate()
-        {
-            UpdateNumber(_romanNumeral);
-            UpdateAndReplace(_romanNumeral);
-        }
-
-        private static void UpdateAndReplace(string roman)
+        private static void Erase(string roman)
         {
             _romanNumeral = _romanNumeral.Replace(roman, string.Empty);
         }

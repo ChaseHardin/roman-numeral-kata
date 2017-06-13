@@ -1,6 +1,6 @@
 # Roman Numeral Kata - C#
 
-This project was developed on June 7th, 2017.
+This kata was last modified on June 12th, 2017.
 
 ## Running unit tests
 
