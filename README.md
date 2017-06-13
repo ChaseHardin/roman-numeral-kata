@@ -8,6 +8,6 @@ Both test classes can be found within the `RomanNumeral.Business.Test` solution.
 
 ## Contact Information
 
-Name: Chase Hardin
-Phone: 515.393.0577
+Name: Chase Hardin,
+Phone: 515.393.0577,
 Email: Chase.Hardin@ScribbleTechnology.com
